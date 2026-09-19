@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "updated": "2026-09-19",
+  "apps": [
+    {
+      "id": "deepal-store",
+      "package": "com.deepalstore.app",
+      "name": "Deepal Store",
+      "tagline": "Магазин приложений для машины",
+      "description": "Ставит и обновляет приложения для Deepal прямо на головном устройстве. Обновляет и сам себя.",
+      "developer": "Deepal Tools",
+      "category": "Система",
+      "icon": "https://raw.githubusercontent.com/DeepalTools/deepal-store-releases/main/icons/deepal-store.png",
+      "source": {
+        "kind": "github-releases",
+        "repo": "DeepalTools/deepal-store-releases",
+        "prereleases": false,
+        "asset": {
+          "match": "\\.apk$",
+          "abi": ["arm64-v8a"]
+        }
+      },
+      "requirements": {
+        "minSdk": 30,
+        "abi": ["arm64-v8a"]
+      },
+      "signature": {
+        "sha256": "DA:6F:9A:2C:41:01:A6:21:C8:08:34:99:C6:88:28:1D:85:ED:16:30:A9:81:92:B7:91:DC:F9:EE:42:92:FF:C9"
+      },
+      "links": {
+        "channel": "https://t.me/deepal_tools"
+      }
+    },
+    {
+      "id": "deepal-voice",
+      "package": "com.deepalvoice.app",
+      "name": "Deepal Voice",
+      "tagline": "Голосовое управление функциями автомобиля",
+      "description": "Говорите «Привет, Дипал» и дальше обычными словами: климат, окна, сиденья, музыка, свет, приложения. Распознавание работает без интернета, прямо в машине.",
+      "developer": "Deepal Tools",
+      "category": "Управление автомобилем",
+      "icon": "https://raw.githubusercontent.com/DeepalTools/deepal-store-releases/main/icons/deepal-voice.png",
+      "source": {
+        "kind": "github-releases",
+        "repo": "DeepalTools/deepal-voice-releases",
+        "prereleases": false,
+        "asset": {
+          "match": "\\.apk$",
+          "abi": ["arm64-v8a"]
+        }
+      },
+      "requirements": {
+        "minSdk": 30,
+        "abi": ["arm64-v8a"]
+      },
+      "signature": {
+        "sha256": "DA:6F:9A:2C:41:01:A6:21:C8:08:34:99:C6:88:28:1D:85:ED:16:30:A9:81:92:B7:91:DC:F9:EE:42:92:FF:C9"
+      },
+      "links": {
+        "channel": "https://t.me/deepal_tools"
+      }
+    },
+    {
+      "id": "deepal-speaker",
+      "package": "com.deepalspeaker.app",
+      "name": "Deepal Speaker",
+      "tagline": "Управление динамиками автомобиля",
+      "description": "Проверка и настройка звука по динамикам салона.",
+      "developer": "Deepal Tools",
+      "category": "Звук",
+      "icon": "https://raw.githubusercontent.com/DeepalTools/deepal-store-releases/main/icons/deepal-speaker.png",
+      "source": {
+        "kind": "github-releases",
+        "repo": "DeepalTools/deepal-speaker-releases",
+        "prereleases": false,
+        "asset": {
+          "match": "\\.apk$",
+          "abi": ["arm64-v8a"]
+        }
+      },
+      "requirements": {
+        "minSdk": 30,
+        "abi": ["arm64-v8a"]
+      },
+      "signature": {
+        "sha256": "DA:6F:9A:2C:41:01:A6:21:C8:08:34:99:C6:88:28:1D:85:ED:16:30:A9:81:92:B7:91:DC:F9:EE:42:92:FF:C9"
+      },
+      "links": {
+        "channel": "https://t.me/deepal_tools"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+name: Каталог
+
+# Этот каталог читают все установленные магазины. Опечатка в нём видна не автору,
+# а людям в машинах, поэтому он проверяется на каждое изменение.
+
+on:
+  push:
+    paths: ['catalog.json']
+  pull_request:
+    paths: ['catalog.json']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Формат и обязательные поля
+        run: |
+          python3 - <<'PY'
+          import json, re, sys
+          d = json.load(open('catalog.json'))
+          assert d.get('schema') == 1, 'не та версия схемы'
+          assert d.get('apps'), 'нет ни одной записи'
+          for a in d['apps']:
+              for field in ('id', 'package', 'name', 'source'):
+                  assert a.get(field), f"{a.get('id', '?')}: нет поля {field}"
+              assert '.' in a['package'], f"{a['id']}: имя пакета без точки"
+              assert '/' in a['source']['repo'], f"{a['id']}: репозиторий без владельца"
+              sha = a.get('signature', {}).get('sha256', '').replace(':', '')
+              assert re.fullmatch(r'[0-9a-fA-F]{64}', sha), f"{a['id']}: отпечаток подписи не на месте"
+          print(f"каталог в порядке, записей: {len(d['apps'])}")
+          PY
